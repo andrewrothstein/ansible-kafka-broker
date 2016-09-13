@@ -1,0 +1,12 @@
+---
+- name: install kafka/config/server.properties
+  become: yes
+  become_user: root
+  with_items:
+    - kafka/config/server.properties
+  template: >-
+    src={{item}}.j2
+    dest={{kafka_install_parent_dir}}/{{item}}
+    mode=0644
+
+- include: '{{kafka_broker_init_system}}.yml'

@@ -1,0 +1,7 @@
+---
+kafka_install_parent_dir: /opt
+
+kafka_broker_init_system: systemd
+kafka_launch: true
+kafka_log_dirs : /var/log/kafka
+kafka_iface : eth0
