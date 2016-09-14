@@ -32,7 +32,7 @@ listeners=PLAINTEXT://0.0.0.0:{{kafka_broker_port|default(9092)}}
 # Hostname and port the broker will advertise to producers and consumers. If not set, 
 # it uses the value for "listeners" if configured.  Otherwise, it will use the value
 # returned from java.net.InetAddress.getCanonicalHostName().
-#advertised.listeners=PLAINTEXT://your.host.name:9092
+advertised.listeners=PLAINTEXT://{{inventory_hostname}}:{{kafka_broker_port|default(9092)}}
 
 # The number of threads handling network requests
 num.network.threads={{kafka_num_network_threads|default(3)}}
