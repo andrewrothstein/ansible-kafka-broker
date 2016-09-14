@@ -15,10 +15,12 @@ galaxy_info:
         - 23
     - name: Ubuntu
       versions:
-        - trusty
         - xenial
   galaxy_tags:
     - development
 
-dependencies: []
+dependencies:
+  - role: andrewrothstein.kafka
+    version: v2.0.1
+  
   
