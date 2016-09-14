@@ -8,7 +8,6 @@ kafka_iface : eth0
 
 kafka_zk_groupname: zookeeper-quorum
 kafka_zk_port: 2181
-kafka_zk_path: /kafka
 kafka_broker_groupname: kafka-broker
 kafka_broker_port: 9202
 kafka_num_network_threads: 3
