@@ -6,8 +6,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStartPre=-/usr/bin/mkdir -p /var/log/kafka
-ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+ExecStartPre=-/usr/bin/mkdir -p {{kafka_log_dirs}}
+ExecStart=/opt/kafka/bin/kafka-server-start.sh {{kafka_install_parent_dir}}/kafka/config/server.properties
 Restart=on-failure
 
 [Install]
