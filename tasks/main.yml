@@ -9,4 +9,14 @@
     dest={{kafka_install_parent_dir}}/{{item}}
     mode=0644
 
+- name: setup login shells with env vars
+  become: yes
+  become_user: root
+  with_items:
+    - etc/profile.d/kafka-broker.sh
+  template: >-
+    src={{item}}.j2
+    dest=/{{item}}
+    mode=0644
+
 - include: '{{kafka_broker_init_system}}.yml'
