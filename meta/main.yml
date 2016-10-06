@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: '@TODO name this role'
+  description: 'kafka broker configurator'
   company: BlackRock
   license:
     - MIT
@@ -21,6 +21,6 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.kafka
-    version: v2.0.1
+    version: v2.0.2
   
   
