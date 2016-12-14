@@ -1,14 +1,13 @@
 ---
-kafka_install_parent_dir: /opt
-
+kafka_install_parent_dir: /usr/local
+kafka_zk_groupname: zookeeper-quorum
+kafka_broker_groupname: kafka-broker
 kafka_broker_init_system: systemd
 kafka_launch: true
 kafka_log_dirs : /var/log/kafka
 kafka_iface : eth0
 
-kafka_zk_groupname: zookeeper-quorum
 kafka_zk_port: 2181
-kafka_broker_groupname: kafka-broker
 kafka_broker_port: 9202
 kafka_num_network_threads: 3
 kafka_num_io_threads: 8

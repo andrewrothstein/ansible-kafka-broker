@@ -9,18 +9,20 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 7
+        - all
     - name: Fedora
       versions:
-        - 23
+        - all
     - name: Ubuntu
       versions:
-        - xenial
+        - all
   galaxy_tags:
-    - development
+    - kafka
+    - queue
+    - cqrs
 
 dependencies:
   - role: andrewrothstein.kafka
-    version: v2.0.2
+    version: v3.0.0
   
   
