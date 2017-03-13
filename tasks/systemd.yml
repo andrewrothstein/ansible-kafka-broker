@@ -8,7 +8,7 @@
       m: '0644'
   register: kafka_service_installed
   template:
-    src: '{{item}}.j2'
+    src: '{{item.f}}.j2'
     dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m}}'
 
