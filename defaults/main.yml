@@ -5,6 +5,8 @@ kafka_broker_groupname: kafka-broker
 kafka_broker_init_system: systemd
 kafka_launch: true
 kafka_log_dirs : /var/log/kafka
+
+kafka_use_ips: False
 kafka_iface : eth0
 
 kafka_zk_port: 2181
