@@ -3,20 +3,14 @@
   become: yes
   become_user: root
   with_items:
-    - kafka/config/server.properties
-  template: >-
-    src={{item}}.j2
-    dest={{kafka_install_parent_dir}}/{{item}}
-    mode=0644
-
-- name: setup login shells with env vars
-  become: yes
-  become_user: root
-  with_items:
-    - etc/profile.d/kafka-broker.sh
-  template: >-
-    src={{item}}.j2
-    dest=/{{item}}
-    mode=0644
-
+    - f: server.properties
+      d: '{{kafka_install_parent_dir}}'
+      m: '0644'
+    - f: kafka-broker.sh
+      d: /etc/profile.d
+      m: '0644'
+  template:
+    src: '{{item.f}}.j2'
+    dest: '{{item.d}}/{{item}}'
+    mode: '{{item.m}}'
 - include: '{{kafka_broker_init_system}}.yml'

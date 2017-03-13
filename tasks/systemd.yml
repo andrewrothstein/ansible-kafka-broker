@@ -3,12 +3,14 @@
   become: yes
   become_user: root
   with_items:
-    - etc/systemd/system/kafka.service
+    - f: kafka.service
+      d: /etc/systemd/system
+      m: '0644'
   register: kafka_service_installed
-  template: >-
-    src={{item}}.j2
-    dest=/{{item}}
-    mode=0644
+  template:
+    src: '{{item}}.j2'
+    dest: '{{item.d}}/{{item}}'
+    mode: '{{item.m}}'
 
 - name: systemctl daemon-reload
   become: yes
@@ -20,5 +22,8 @@
   become: yes
   become_user: root
   when: kafka_launch
-  service: name=kafka enabled=yes state=started
+  service:
+    name: kafka
+    enabled: yes
+    state: started
   
