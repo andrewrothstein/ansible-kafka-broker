@@ -9,7 +9,7 @@
   register: kafka_service_installed
   template:
     src: '{{item}}.j2'
-    dest: '{{item.d}}/{{item}}'
+    dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m}}'
 
 - name: systemctl daemon-reload

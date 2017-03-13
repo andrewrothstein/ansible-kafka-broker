@@ -11,6 +11,6 @@
       m: '0644'
   template:
     src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item}}'
+    dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m}}'
 - include: '{{kafka_broker_init_system}}.yml'
