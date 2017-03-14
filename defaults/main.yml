@@ -1,5 +1,5 @@
 ---
-kafka_install_parent_dir: /usr/local
+kafka_dir: /usr/local/kafka
 kafka_zk_groupname: zookeeper-quorum
 kafka_broker_groupname: kafka-broker
 kafka_broker_init_system: systemd

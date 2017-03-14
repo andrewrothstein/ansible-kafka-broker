@@ -4,7 +4,7 @@
   become_user: root
   with_items:
     - f: server.properties
-      d: '{{kafka_install_parent_dir}}'
+      d: '{{kafka_dir}}/config'
       m: '0644'
     - f: kafka-broker.sh
       d: /etc/profile.d
