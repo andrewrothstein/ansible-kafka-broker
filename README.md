@@ -1,5 +1,6 @@
-[andrewrothstein.kafka-broker](https://galaxy.ansible.com/andrewrothstein/zookeeper/)
+andrewrothstein.kafka-broker
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-kafka-broker.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-kafka-broker)
 
 Install a [Kafka](https://kafka.apache.org/) broker.
 Assumes an accessible ZooKeeper quorum. Consider [ZooKeeper cluster](https://github.com/andrewrothstein/ansible-zookeeper-cluster)

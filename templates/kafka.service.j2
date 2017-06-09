@@ -5,6 +5,10 @@ Requires=network.target
 After=network.target
 
 [Service]
+EnvironmentFile=-/usr/local/java/oracle-java.env
+EnvironmentFile=-/usr/local/java/oracle-jre.env
+EnvironmentFile={{kafka_dir}}/kafka.env
+
 Type=simple
 ExecStartPre=-/usr/bin/mkdir -p {{kafka_log_dirs}}
 ExecStart={{kafka_dir}}/bin/kafka-server-start.sh {{kafka_dir}}/config/server.properties

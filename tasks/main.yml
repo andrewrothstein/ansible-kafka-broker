@@ -5,12 +5,13 @@
   with_items:
     - f: server.properties
       d: '{{kafka_dir}}/config'
-      m: '0644'
     - f: kafka-broker.sh
       d: /etc/profile.d
-      m: '0644'
+    - f: kafka-broker.env
+      d: '{{kafka_dir}}'
   template:
     src: '{{item.f}}.j2'
     dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m}}'
+    mode: '{{item.m|default("0644")}}'
+
 - include: '{{kafka_broker_init_system}}.yml'
