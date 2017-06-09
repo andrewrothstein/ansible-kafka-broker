@@ -1,7 +1,5 @@
 ---
 - hosts: all
   roles:
-    - role: andrewrothstein.zookeeper-cluster
-      zookeeper_launch: False
     - role: '{{playbook_dir}}'
       kafka_launch: False
