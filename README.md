@@ -2,7 +2,7 @@ andrewrothstein.kafka-broker
 =========
 [![Build Status](https://travis-ci.org/andrewrothstein/ansible-kafka-broker.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-kafka-broker)
 
-Install a [Kafka](https://kafka.apache.org/) broker. Assumes access to a ZooKeeper quorum
+Install a [Kafka](https://kafka.apache.org/) broker. Assumes access to a ZooKeeper quorum.
 
 Requirements
 ------------
