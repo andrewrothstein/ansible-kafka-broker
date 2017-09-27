@@ -14,4 +14,4 @@
     dest: '{{item.d}}/{{item.f}}'
     mode: '{{item.m|default("0644")}}'
 
-- include: '{{kafka_broker_init_system}}.yml'
+- include_tasks: '{{kafka_broker_init_system}}.yml'
