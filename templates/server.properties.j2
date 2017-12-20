@@ -21,7 +21,7 @@ broker.id={{kafka_broker_id}}
 
 ############################# Socket Server Settings #############################
 
-# The address the socket server listens on. It will get the value returned from 
+# The address the socket server listens on. It will get the value returned from
 # java.net.InetAddress.getCanonicalHostName() if not configured.
 #   FORMAT:
 #     listeners = security_protocol://host_name:port
@@ -29,7 +29,7 @@ broker.id={{kafka_broker_id}}
 #     listeners = PLAINTEXT://your.host.name:9092
 listeners=PLAINTEXT://0.0.0.0:{{kafka_broker_port|default(9092)}}
 
-# Hostname and port the broker will advertise to producers and consumers. If not set, 
+# Hostname and port the broker will advertise to producers and consumers. If not set,
 # it uses the value for "listeners" if configured.  Otherwise, it will use the value
 # returned from java.net.InetAddress.getCanonicalHostName().
 advertised.listeners=PLAINTEXT://{{inventory_hostname}}:{{kafka_broker_port|default(9092)}}
@@ -98,7 +98,7 @@ log.retention.hours={{kafka_log_retention_hours|default(168)}}
 # The maximum size of a log segment file. When this size is reached a new log segment will be created.
 log.segment.bytes={{kafka_log_segment_bytes|default(1073741824)}}
 
-# The interval at which log segments are checked to see if they can be deleted according 
+# The interval at which log segments are checked to see if they can be deleted according
 # to the retention policies
 log.retention.check.interval.ms={{kafka_log_retention_check_interval_ms|default(300000)}}
 
@@ -114,4 +114,8 @@ zookeeper.connect={{kafka_zk_connect}}
 # Timeout in ms for connecting to zookeeper
 zookeeper.connection.timeout.ms={{kafka_zk_connection_timeout_ms|default(6000)}}
 
-
+{% if kafka_extra_parameters is defined %}
+{% for key, value in kafka_extra_parameters.items() %}
+{{ key }}={{ value }}
+{% endfor %}
+{% endif %}
