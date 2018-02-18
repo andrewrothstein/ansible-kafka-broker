@@ -1,2 +1,11 @@
 export KAFKA_ZK_CONNECT="{{kafka_zk_connect}}"
 export KAFKA_BROKER_CONNECT="{{kafka_broker_connect}}"
+{% if kafka_heap_opts is defined %}
+export KAFKA_HEAP_OPTS="{{kafka_heap_opts}}"
+{% endif %}
+{% if kafka_jmx_opts is defined %}
+export KAFKA_JMX_OPTS="{{kafka_jmx_opts}}"
+{% endif %}
+{% if kafka_jmx_port is defined %}
+export JMX_PORT={{kafka_jmx_port}}
+{% endif %}
