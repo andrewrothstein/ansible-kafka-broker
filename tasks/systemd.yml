@@ -15,7 +15,7 @@
 - name: systemctl daemon-reload
   become: yes
   become_user: root
-  when: kafka_service_installed|changed and kafka_launch
+  when: kafka_service_installed is changed and kafka_launch
   command: systemctl daemon-reload
 
 - name: launch kafka...
