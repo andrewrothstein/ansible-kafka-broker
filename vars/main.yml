@@ -1,4 +1,4 @@
 ---
-kafka_zk_connect : "{% for host in groups[kafka_zk_groupname] %}{% if kafka_use_ips %}{{hostvars[host]['ansible_' + kafka_iface]['ipv4']['address']}}{% else %}{{host}}{% endif %}:{{kafka_zk_port|default(2181)}}{% if not loop.last %},{% endif %}{% endfor %}"
+kafka_zk_connect : "{% for host in groups[kafka_zk_groupname] %}{% if kafka_use_ips %}{{ hostvars[host]['ansible_' + kafka_iface]['ipv4']['address'] }}{% else %}{{ host }}{% endif %}:{{ kafka_zk_port|default(2181) }}{% if not loop.last %},{% endif %}{% endfor %}"
 
-kafka_broker_connect : "{% for host in groups[kafka_broker_groupname] %}{% if kafka_use_ips %}{{hostvars[host]['ansible_' + kafka_iface]['ipv4']['address']}}{% else %}{{host}}{% endif %}:{{kafka_broker_port|default(9202)}}{% if not loop.last %},{% endif %}{% endfor %}"
+kafka_broker_connect : "{% for host in groups[kafka_broker_groupname] %}{% if kafka_use_ips %}{{ hostvars[host]['ansible_' + kafka_iface]['ipv4']['address'] }}{% else %}{{ host }}{% endif %}:{{ kafka_broker_port|default(9202) }}{% if not loop.last %},{% endif %}{% endfor %}"

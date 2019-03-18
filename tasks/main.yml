@@ -4,14 +4,14 @@
   become_user: root
   with_items:
     - f: server.properties
-      d: '{{kafka_dir}}/config'
+      d: '{{ kafka_dir }}/config'
     - f: kafka-broker.sh
       d: /etc/profile.d
     - f: kafka-broker.env
-      d: '{{kafka_dir}}'
+      d: '{{ kafka_dir }}'
   template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m|default("0644")}}'
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m|default("0644") }}'
 
-- include_tasks: '{{kafka_broker_init_system}}.yml'
+- include_tasks: '{{ kafka_broker_init_system }}.yml'

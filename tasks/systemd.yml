@@ -8,15 +8,16 @@
       m: '0644'
   register: kafka_service_installed
   template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m}}'
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m }}'
 
 - name: systemctl daemon-reload
   become: yes
   become_user: root
   when: kafka_service_installed is changed and kafka_launch
-  command: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
 
 - name: launch kafka...
   become: yes
@@ -26,4 +27,3 @@
     name: kafka
     enabled: yes
     state: started
-  
