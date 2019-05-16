@@ -1,26 +1,24 @@
----
+dependencies:
+- role: andrewrothstein.kafka
+  version: v4.0.0
 galaxy_info:
   author: Andrew Rothstein
-  description: kafka broker configurator
   company: BlackRock
+  description: kafka broker configurator
+  galaxy_tags:
+  - kafka
+  - queue
+  - cqrs
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-  galaxy_tags:
-    - kafka
-    - queue
-    - cqrs
-
-dependencies:
-  - role: andrewrothstein.kafka
-    version: v3.1.5
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
