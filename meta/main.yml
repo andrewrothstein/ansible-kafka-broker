@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.kafka
-  version: v4.1.0
+  version: v4.1.2
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock

@@ -5,8 +5,7 @@ Requires=network.target
 After=network.target
 
 [Service]
-EnvironmentFile=-/usr/local/java/java-oracle.env
-EnvironmentFile=-/usr/local/java/oracle-jre.env
+EnvironmentFile=-/usr/local/openjdk-jre/openjdk.env
 EnvironmentFile={{kafka_dir}}/kafka-broker.env
 
 Type=simple
